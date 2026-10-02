@@ -1,7 +1,7 @@
 "use client";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
-import { projects } from "@/lib/data";
+import { projects, type Track } from "@/lib/data";
 import Reveal, { SectionHead } from "./Reveal";
 
 function Card({ p, i }: { p: (typeof projects)[number]; i: number }) {
@@ -14,11 +14,11 @@ function Card({ p, i }: { p: (typeof projects)[number]; i: number }) {
   const rotY = useTransform(sx, [-0.5, 0.5], [-9, 9]);
 
   return (
-    <Reveal delay={(i % 2) * 0.1} className={i === 0 ? "md:col-span-2" : ""}>
+    <Reveal delay={(i % 2) * 0.1}>
       <motion.a
         ref={ref}
         href={p.href}
-        target="_blank"
+        target={p.href ? "_blank" : undefined}
         rel="noreferrer"
         style={{ rotateX: rotX, rotateY: rotY, transformPerspective: 1000 }}
         onPointerMove={(e) => {
@@ -43,9 +43,11 @@ function Card({ p, i }: { p: (typeof projects)[number]; i: number }) {
         <div className="relative">
           <div className="flex items-center justify-between font-mono text-[11px] uppercase tracking-widest">
             <span style={{ color: p.hue }}>{p.tag}</span>
-            <span className="text-dim transition group-hover:translate-x-1 group-hover:text-white">
-              ↗
-            </span>
+            {p.href && (
+              <span className="text-dim transition group-hover:translate-x-1 group-hover:text-white">
+                ↗
+              </span>
+            )}
           </div>
           <h3 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">
             {p.name}
@@ -67,18 +69,42 @@ function Card({ p, i }: { p: (typeof projects)[number]; i: number }) {
   );
 }
 
+const filters: { id: Track | "all"; label: string }[] = [
+  { id: "all", label: "All" },
+  { id: "systems", label: "Systems & backend" },
+  { id: "ai", label: "AI" },
+  { id: "mobile", label: "Mobile" },
+];
+
 export default function Projects() {
+  const [f, setF] = useState<Track | "all">("all");
+  const list = projects.filter((p) => f === "all" || p.tracks.includes(f));
   return (
     <section id="work" className="relative px-6 py-32">
       <div className="mx-auto max-w-6xl">
         <SectionHead
-          index="03 / work"
+          index="04 / work"
           title="Things I've built."
-          sub="Native mobile, multi-tenant SaaS, AI apps and visual tooling. Open source, so you can read the code."
+          sub="Multi-tenant SaaS, workflow tooling, native mobile and AI apps. Filter by discipline."
         />
+        <div className="mb-8 flex flex-wrap gap-2">
+          {filters.map((x) => (
+            <button
+              key={x.id}
+              onClick={() => setF(x.id)}
+              className={`rounded-full border px-4 py-1.5 font-mono text-xs uppercase tracking-wider transition ${
+                f === x.id
+                  ? "border-cyan bg-cyan/10 text-cyan"
+                  : "border-line text-dim hover:text-white"
+              }`}
+            >
+              {x.label}
+            </button>
+          ))}
+        </div>
         <div className="grid gap-6 md:grid-cols-2" style={{ perspective: 1200 }}>
-          {projects.map((p, i) => (
-            <Card key={p.id} p={p} i={i} />
+          {list.map((p, i) => (
+            <Card key={p.id + f} p={p} i={i} />
           ))}
         </div>
       </div>

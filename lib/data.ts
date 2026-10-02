@@ -7,11 +7,11 @@ export const profile = {
   linkedin: "https://linkedin.com/in/souraj-pal",
   location: "Kolkata, India",
   roles: [
-    "AI-native engineer",
-    "agent architect",
-    "full-stack builder",
+    "backend & distributed systems",
+    "full-stack product engineer",
     "FinTech & open-banking dev",
-    "MCP tool smith",
+    "mobile builder: iOS, Android, Flutter",
+    "AI-native & agentic systems",
   ],
 };
 
@@ -22,36 +22,60 @@ export const stats = [
   { label: "Manual effort cut", value: 80, suffix: "%" },
 ];
 
-export const projects = [
+export type Track = "systems" | "ai" | "mobile";
+
+export const projects: {
+  id: string;
+  name: string;
+  tag: string;
+  blurb: string;
+  stack: string[];
+  href?: string;
+  hue: string;
+  tracks: Track[];
+}[] = [
+  {
+    id: "foodgrid",
+    name: "FoodGrid",
+    tag: "Systems · Multi-tenant SaaS",
+    blurb:
+      "Multi-tenant restaurant management and POS platform. Quarkus (Java) backend with JWT auth, Next.js frontend, Razorpay payments, Dockerised.",
+    stack: ["Quarkus", "Java", "Next.js", "Razorpay", "Docker"],
+    href: "https://github.com/cureius/FoodGrid",
+    hue: "#8b5cff",
+    tracks: ["systems"],
+  },
   {
     id: "leo",
     name: "LEO",
-    tag: "AI · iOS / macOS / Web",
+    tag: "AI · Native apps",
     blurb:
       "AI-first calendar and task timeline. Native SwiftUI + SwiftData on Apple platforms, React + Tauri on web, Supabase backend, LLM tool-calling to plan your day.",
     stack: ["SwiftUI", "Tauri", "React", "Supabase", "LLM tools"],
     href: "https://github.com/cureius/LEO",
     hue: "#00f0ff",
+    tracks: ["ai", "mobile"],
   },
   {
-    id: "foodgrid",
-    name: "FoodGrid",
-    tag: "SaaS · POS",
+    id: "streamliner",
+    name: "Streamliner",
+    tag: "Systems · ERP",
     blurb:
-      "Multi-tenant restaurant management and POS platform. Quarkus backend, Next.js frontend, Razorpay payments, Dockerised.",
-    stack: ["Quarkus", "Java", "Next.js", "Razorpay", "Docker"],
-    href: "https://github.com/cureius/FoodGrid",
-    hue: "#8b5cff",
+      "Manufacturing ERP that cut manual effort by 80%. Process modelling, data integrity and workflows for a real shop floor.",
+    stack: ["ERP", "Data modelling", "Workflows"],
+    hue: "#b6ff3b",
+    tracks: ["systems"],
   },
   {
     id: "workflow",
     name: "WorkFlowBuilder",
-    tag: "Visual automation",
+    tag: "Systems · Workflow engine",
     blurb:
-      "Drag-and-drop workflow builder: compose nodes into automations. The same pattern I shipped in production at GoDeskless.",
+      "Visual workflow builder: compose nodes into automations. The same pattern I shipped in production at GoDeskless.",
     stack: ["Next.js", "Prisma", "TypeScript"],
     href: "https://github.com/cureius/WorkFlowBuilder",
     hue: "#ff2fd0",
+    tracks: ["systems"],
   },
   {
     id: "pocket",
@@ -61,7 +85,8 @@ export const projects = [
       "Personal finance app in Kotlin with Clean Architecture and SMS-based transaction sync.",
     stack: ["Kotlin", "Compose", "Clean Arch"],
     href: "https://github.com/cureius/Pocket",
-    hue: "#b6ff3b",
+    hue: "#00f0ff",
+    tracks: ["mobile"],
   },
   {
     id: "skycast",
@@ -70,7 +95,8 @@ export const projects = [
     blurb: "Weather app with Bloc state management and geolocation.",
     stack: ["Flutter", "Dart", "Bloc"],
     href: "https://github.com/cureius/SkyCastApp",
-    hue: "#00f0ff",
+    hue: "#8b5cff",
+    tracks: ["mobile"],
   },
 ];
 
@@ -112,25 +138,17 @@ export const experience = [
 ];
 
 export const stackMap = [
-  { ring: 0, items: ["LLM tool-calling", "MCP", "Agents", "Evals"] },
+  { ring: 0, items: ["System design", "Event-driven", "Data modelling", "API design"] },
   { ring: 1, items: ["Java", "Kotlin", "TypeScript", "Python", "Swift", "Ruby"] },
   {
     ring: 2,
-    items: [
-      "Quarkus",
-      "Spring Boot",
-      "Node.js",
-      "Rails",
-      "React",
-      "Next.js",
-      "Flutter",
-      "SwiftUI",
-    ],
+    items: ["Quarkus", "Spring Boot", "Node.js", "Rails", "React", "Next.js", "Flutter", "SwiftUI"],
   },
   {
     ring: 3,
     items: ["Kafka", "PostgreSQL", "ClickHouse", "AWS", "Kubernetes", "Docker", "CI/CD"],
   },
+  { ring: 4, items: ["LLM tool-calling", "MCP", "Agents", "Evals"] },
 ];
 
 export const traceSteps = [

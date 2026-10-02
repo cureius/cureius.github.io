@@ -124,10 +124,10 @@ export default function Hero() {
             transition={{ delay: 2.2 }}
             className="mt-6 max-w-xl text-lg leading-relaxed text-[#b9c3e6]"
           >
-            I build AI-native products and agentic systems on top of rock-solid
-            backends, from open-banking rails serving{" "}
-            <b className="text-white">120 lenders</b> to LLM tool-calling and MCP
-            servers that turn a week of integration into{" "}
+            I build software end to end: event-driven backends and open-banking
+            rails serving <b className="text-white">120 lenders</b>, multi-tenant
+            SaaS, native mobile apps, and AI-native features on top, like an MCP
+            server that turned a week of integration into{" "}
             <b className="text-white">4 hours</b>.
           </motion.p>
 
@@ -170,17 +170,17 @@ export default function Hero() {
               <div className="font-mono text-[10px] uppercase tracking-[0.4em] text-cyan">
                 core
               </div>
-              <div className="text-grad text-5xl font-bold">AI</div>
+              <div className="text-grad text-4xl font-bold">CS × AI</div>
               <div className="font-mono text-[10px] tracking-widest text-dim">
-                × ENGINEERING
+                ENGINEERING
               </div>
             </div>
           </div>
           {[
-            ["MCP", "top-2 left-1/2"],
-            ["Agents", "top-1/2 -right-2"],
-            ["Kafka", "bottom-2 left-1/3"],
-            ["LLM", "top-1/3 -left-3"],
+            ["Kafka", "top-2 left-1/2"],
+            ["MCP", "top-1/2 -right-2"],
+            ["Kubernetes", "bottom-2 left-1/3"],
+            ["Java", "top-1/3 -left-3"],
           ].map(([t, pos], i) => (
             <motion.span
               key={t}

@@ -13,9 +13,9 @@ const mono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Souraj Pal — AI-native Software Engineer",
+  title: "Souraj Pal — Software Engineer",
   description:
-    "Senior software engineer building AI-native products and agentic systems. FinTech, SaaS, open banking, MCP, LLM tool-calling.",
+    "Senior software engineer: distributed systems, multi-tenant SaaS, open banking, mobile and AI-native products.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

@@ -37,9 +37,9 @@ export default function AgentTrace() {
     <section id="agents" className="relative px-6 py-32">
       <div className="mx-auto max-w-6xl">
         <SectionHead
-          index="01 / agentic"
-          title="Agents that actually finish the job."
-          sub="Planner, tools, observations and a critic. I design the loop, ground it in real systems, and put guardrails around it. Here's a replay of how I think about an agent run."
+          index="02 / ai & agents"
+          title="Then I put AI on top of it."
+          sub="Agents are only as good as the systems under them. I design the loop (planner, tools, observations, critic) and ground it in real backends. Here's an illustrative replay of an agent run."
         />
         <div className="grid gap-8 lg:grid-cols-[1.4fr_1fr]">
           <Reveal>

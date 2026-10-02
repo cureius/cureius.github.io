@@ -3,7 +3,8 @@ import { motion, useScroll, useSpring } from "framer-motion";
 import { profile } from "@/lib/data";
 
 const links = [
-  ["agents", "Agents"],
+  ["systems", "Systems"],
+  ["agents", "AI"],
   ["stack", "Stack"],
   ["work", "Work"],
   ["path", "Path"],

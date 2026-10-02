@@ -16,7 +16,7 @@ export default function Experience() {
     <section id="path" className="relative px-6 py-32">
       <div className="mx-auto max-w-4xl">
         <SectionHead
-          index="04 / path"
+          index="05 / path"
           title="Where I've shipped."
         />
         <div ref={ref} className="relative pl-10 sm:pl-16">

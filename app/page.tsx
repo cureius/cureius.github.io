@@ -1,5 +1,6 @@
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
+import Systems from "@/components/Systems";
 import AgentTrace from "@/components/AgentTrace";
 import StackMap from "@/components/StackMap";
 import Projects from "@/components/Projects";
@@ -19,6 +20,7 @@ export default function Home() {
       <Nav />
       <main className="relative z-10">
         <Hero />
+        <Systems />
         <AgentTrace />
         <StackMap />
         <Projects />

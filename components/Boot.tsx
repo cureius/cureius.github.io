@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from "framer-motion";
 const lines = [
   "[ ok ] mounting /dev/souraj",
   "[ ok ] loading neural field ........ 140 nodes",
+  "[ ok ] starting services ........... kafka · postgres · k8s",
   "[ ok ] spawning agents ............. planner · tools · critic",
   "[ ok ] connecting MCP servers ...... 3 online",
   "[ ok ] compiling experience ........ 4+ yrs",

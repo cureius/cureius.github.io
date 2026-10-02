@@ -10,13 +10,13 @@ export default function Contact() {
       <div className="mx-auto max-w-4xl text-center">
         <Reveal>
           <div className="font-mono text-xs uppercase tracking-[0.3em] text-cyan">
-            {"// 05 / contact"}
+            {"// 06 / contact"}
           </div>
           <h2 className="mt-4 text-5xl font-bold tracking-tighter sm:text-7xl">
             Let&apos;s build something <span className="text-grad">unreasonable.</span>
           </h2>
           <p className="mx-auto mt-6 max-w-xl text-dim">
-            Open to senior backend, full-stack and AI/agent engineering roles,
+            Open to senior backend, full-stack and AI engineering roles,
             including relocation and visa sponsorship.
           </p>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4">

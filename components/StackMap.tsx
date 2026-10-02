@@ -4,25 +4,32 @@ import { stackMap } from "@/lib/data";
 import { SectionHead } from "./Reveal";
 
 const ringStyle = [
-  { r: 90, c: "#ff2fd0", d: 40 },
-  { r: 170, c: "#8b5cff", d: 55 },
-  { r: 255, c: "#00f0ff", d: 75 },
-  { r: 340, c: "#b6ff3b", d: 95 },
+  { r: 80, c: "#b6ff3b", d: 40 },
+  { r: 150, c: "#8b5cff", d: 55 },
+  { r: 230, c: "#00f0ff", d: 75 },
+  { r: 310, c: "#5aa0ff", d: 95 },
+  { r: 385, c: "#ff2fd0", d: 115 },
 ];
-const ringName = ["AI layer", "Languages", "Frameworks", "Infra & data"];
+const ringName = [
+  "Engineering core",
+  "Languages",
+  "Frameworks & apps",
+  "Infra & data",
+  "AI layer",
+];
 
 export default function StackMap() {
   return (
     <section id="stack" className="relative overflow-hidden px-6 py-32">
       <div className="mx-auto max-w-6xl">
         <SectionHead
-          index="02 / range"
-          title="The whole stack. Core to cloud."
-          sub="Electronics & Communication by training, product engineer by practice. I'm curious about every layer, from the model call to the Kubernetes pod."
+          index="03 / range"
+          title="The whole stack. Core to cloud to AI."
+          sub="Electronics & Communication by training, product engineer by practice. Solid engineering fundamentals at the centre, with AI as one layer on top. I'm curious about every layer, from the schema to the model call to the Kubernetes pod."
         />
 
         {/* orbital (desktop) */}
-        <div className="relative mx-auto hidden h-[720px] w-full max-w-[720px] md:block">
+        <div className="relative mx-auto hidden h-[800px] w-full max-w-[800px] md:block">
           {stackMap.map((ring, ri) => {
             const { r, c, d } = ringStyle[ri];
             return (
